@@ -1,0 +1,13 @@
+{
+  "backend": "simulator",
+  "measurement_duration_s": 30,
+  "training_duration_s": 60,
+  "minimum_load_kg": 5.0,
+  "visualization": {"scale_mode": "fixed", "fixed_range": 1.0, "path_points": 750},
+  "sound": {"enabled": false, "volume": 0.35},
+  "filter": {"kind": "moving_average", "window": 5, "order": 4, "cutoff_hz": 5.0},
+  "adaptation": {"minimum_radius": 0.05, "maximum_radius": 0.4, "step_percent": 10},
+  "paths": {"data": "data"},
+  "report": {"include_personal_data": false},
+  "second_screen": {"enabled": false}
+}

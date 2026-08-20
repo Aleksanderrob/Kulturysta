@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.spec.bak
+data/participants/*
+data/sessions/*
+data/exports/*
+data/reports/*
+data/logs/*
+!data/**/.gitkeep
+.DS_Store

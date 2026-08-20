@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kulturysta"
+version = "0.1.0"
+description = "Offline educational Wii Balance Board posturography and balance training app"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "scipy>=1.14",
+  "PySide6>=6.8",
+  "openpyxl>=3.1",
+  "reportlab>=4.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "pytest-qt>=4.4", "ruff>=0.8", "black>=24.10", "pyinstaller>=6.11", "matplotlib>=3.9", "jupyter>=1.1"]
+
+[tool.setuptools.packages.find]
+include = ["app*", "hardware*", "acquisition*", "analysis*", "biofeedback*", "games*", "storage*", "ui*"]
+
+[tool.pytest.ini_options]
+addopts = "-m 'not hardware'"
+testpaths = ["tests"]
+markers = ["hardware: tests requiring a physical Wii Balance Board"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
